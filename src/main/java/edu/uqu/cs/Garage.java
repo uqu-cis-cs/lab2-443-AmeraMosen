@@ -21,6 +21,7 @@ public class Garage{
      * private classType [] varName = new classType[size];
      *
      */
+    private Car cars[]= new Car[3];
 
     /************ Part 2 **************/
     /**
@@ -31,6 +32,7 @@ public class Garage{
      * public dataType varName= value;
      *
      */
+    public static int countCars = 0;
 
     /************ Part 3 **************/
     /**
@@ -45,6 +47,11 @@ public class Garage{
      *     }
      *}
      */
+    public Garage(){
+      for (int i = 0; i <cars.length; i++) {
+              cars[i]=new Car();
+    }
+    }
 
     /************ Part 4 **************/
     /**
@@ -59,7 +66,21 @@ public class Garage{
      * Syntax:
      * public void methodName(String m)
      */
-
+     public void addCar(String name){
+             cars[countCars].setModel(name);
+             cars[countCars].moveCarIn();
+              countCars+=1; 
+                 }
+            // for(int i=0; i<cars.length ; i++)
+            // {
+            // if (name.equals(cars[i])){
+            // cars[i].moveCarIn();
+            // countCars+=1;
+            //  }
+            // }
+            
+            
+        
 
     /************ Part 5 **************/
     /**
@@ -71,7 +92,13 @@ public class Garage{
      * public void methodName(String m)
      *
      */
-
+        public void moveOut(String model){
+             for(int i=0; i<cars.length ; i++)
+             {
+            if (model.equals(cars[i].getModel()))
+            cars[i].moveCarOut(); 
+                }
+        }
 
 
     /************ Part 6 **************/
@@ -83,8 +110,14 @@ public class Garage{
      * Syntax:
      * public void methodName(String m)
      *
-     */
-
+     */   
+    public void moveIn(String model){
+          for(int i=0; i<cars.length ; i++)
+            {
+            if (model.equals(cars[i].getModel()))
+            cars[i].moveCarIn(); 
+            }
+    }
 
     /************ Part 7 **************/
     /**
@@ -95,7 +128,16 @@ public class Garage{
      * public void methodName(String m)
      *
      */
-
+        public void listCars()
+        {
+            System.out.println("All cars in the garage are :");
+            for(int i=0; i<cars.length ; i++)
+            {
+                if(cars[i].getFlag()==true)
+                System.out.printf("Car "+(i+1)+":"+cars[i].getModel());
+            }
+            System.out.println();
+        }
 
 
 }
