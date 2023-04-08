@@ -22,6 +22,9 @@ public class Car{
      *
      */
 
+        private String model;
+        private boolean flag;
+
     /************ Part 2 **************/
     /**
      * Define a default constructor and set 
@@ -33,6 +36,17 @@ public class Car{
      *      //body
      * }
      */
+    
+        public Car(){
+            model="honody carolla fff";
+            flag = true ;
+
+        }
+
+        // public Car(String k,boolean l){
+        //     model = k;
+        //     flag = l;
+        // }
 
     /************ Part 3 **************/
     /**
@@ -43,6 +57,14 @@ public class Car{
      *      return this.InstanceVariableName;
      * }
      */
+        public String getModel()
+        {
+            return model;
+        }
+        public boolean getFlag()
+        {
+            return flag;
+        }
 
 
     /************ Part 4 **************/
@@ -54,6 +76,17 @@ public class Car{
      * }
      *
      */
+        public void setModel(String i)
+        {
+            this.model=i;
+        }
+      
+
+        public void setFlag(boolean o)
+        {
+            this.flag = o;
+        }
+     
 
 
     /************ Part 5 **************/
@@ -64,6 +97,14 @@ public class Car{
      *
      */
 
+       public void moveCarOut()
+        {
+            this.flag = false ;
+        }
+        public void moveCarIn()
+        {
+            this.flag = true ;
+        }
 
 
 }
